@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Student Management System</h1>
+    </header>
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="#students">Students</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <main id="main-content" class="container">
+      <!-- Form to Add Course -->
+      <section id="add-course-section">
+        <h2>Add Course</h2>
+        <form id="add-course-form">
+          <input
+            type="text"
+            id="course-name"
+            placeholder="Course Name"
+            required
+          />
+          <input
+            type="text"
+            id="course-grading-scale"
+            placeholder="Grading Scale (e.g., A:90,B:80,C:70,D:60,F:0)"
+            required
+          />
+          <button type="submit">Add Course</button>
+        </form>
+      </section>
+      <!-- Form to Add Student -->
+      <section id="add-student-section">
+        <h2>Add Student</h2>
+        <form id="add-student-form">
+          <select id="student-course-select">
+            <!-- Options will be added dynamically -->
+          </select>
+          <input
+            type="text"
+            id="student-id"
+            placeholder="Student ID"
+            required
+          />
+          <input
+            type="text"
+            id="student-name"
+            placeholder="Student Name"
+            required
+          />
+          <input
+            type="text"
+            id="student-surname"
+            placeholder="Student Surname"
+            required
+          />
+          <input
+            type="number"
+            id="student-midterm"
+            placeholder="Midterm Score"
+            required
+          />
+          <input
+            type="number"
+            id="student-final"
+            placeholder="Final Score"
+            required
+          />
+          <button type="submit">Add Student</button>
+        </form>
+      </section>
+      <!-- Section to Display Courses and Students -->
+      <section id="display-section">
+        <h2>Course Details</h2>
+        <div id="course-details">
+          <!-- Course details will be displayed here -->
+        </div>
+      </section>
+      <!--search bar-->
+      <section id="search-student-section">
+        <input
+          type="text"
+          id="search-bar"
+          placeholder="Search for students..."
+        />
+        <button onclick="searchStudents()">Search</button>
+      </section>
+      <!-- Modal Dialog HTML -->
+      <div id="editModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Edit Student Scores</h2>
+          <input
+            type="number"
+            id="newMidtermScore"
+            placeholder="New Midterm Score"
+          />
+          <input
+            type="number"
+            id="newFinalScore"
+            placeholder="New Final Score"
+          />
+          <button onclick="saveEditedScores()">Save Changes</button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024 Student Management System</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
